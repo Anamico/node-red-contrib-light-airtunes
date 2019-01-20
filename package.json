@@ -1,0 +1,41 @@
+{
+  "name": "node-red-contrib-light-airtunes",
+  "version": "0.4.0",
+  "description": "Nodes to act as airtunes \"speakers\" and use the audio stream to feed lightshow outputs to node-red-contrib-light.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "node-red": {
+    "nodes": {
+      "AnamicoAlarmPanel": "alarm/panel.js",
+      "AnamicoAlarmSensor": "alarm/sensor.js",
+      "AnamicoAlarmStateChanged": "alarm/stateChanged.js",
+      "AnamicoAlarmChangeState": "alarm/changeState.js",
+      "AnamicoAlarmTriggered": "alarm/triggered.js"
+    }
+  },
+  "author": "Andrew",
+  "contributors": [
+    {
+      "name": "Andrew",
+      "email": "roo@roo.emu.id.au"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.1",
+    "audio-analyser": "^1.0.2",
+    "nodetunes-zp": "github:ebaauw/nodetunes"
+  },
+  "keywords": [
+    "node-red",
+    "light",
+    "airtunes",
+    "automation"
+  ],
+  "bugs": {
+    "url": "https://github.com/Anamico/node-red-contrib-light-airtunes/issues"
+  },
+  "homepage": "https://github.com/Anamico/node-red-contrib-light-airtunes#readme",
+  "repository": "https://github.com/Anamico/node-red-contrib-light-airtunes"
+}

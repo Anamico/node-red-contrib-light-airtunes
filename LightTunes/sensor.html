@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('AnamicoAlarmSensor', {
+        category: 'alarm system',
+        color: '#FFFFFF',
+        defaults: {
+            name: { value : "", required: true },
+            panel: { type: 'AnamicoAlarmPanel', required: true },
+            alarmStates: { value : "1", required: true, validate:RED.validators.regex(/.{1,}/) }
+        },
+        inputs: 1,
+        outputs: 0,
+        inputLabels: "input",
+        icon: "alarm.png",
+        label: function() {
+            return this.name || "Sensor";
+        },
+        paletteLabel: 'Alarm Sensor'
+    });
+</script>
+
+<script type="text/x-red" data-template-name="AnamicoAlarmSensor">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-panel"><i class="fa fa-server"></i> Panel</label>
+        <input type="text" id="node-input-panel" placeholder="Panel">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-alarmStates"><i class="fa fa-filter"></i> Modes</label>
+        <select id="node-input-alarmStates" size="4" multiple="true">
+            <option value="0">Home</option>
+            <option value="1">Away</option>
+            <option value="2">Night</option>
+            <option value="3">Off</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="AnamicoAlarmSensor">
+    <h3>Alarm Sensor</h3>
+    <p>Represents a single control panel, like a panel for a house.</p>
+</script>
